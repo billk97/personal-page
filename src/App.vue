@@ -1,22 +1,24 @@
 <template>
     <div id="app">
-        <img alt="Vue logo" src="./assets/logo.png">
-        <hello-world msg="Welcome to Your Vue.js App" />
+        <encrypt />
     </div>
 </template>
 
 <script>
-    import HelloWorld from './components/HelloWorld.vue'
+    import Encrypt from './components/Encrypt.vue'
 
     export default {
         name: 'App',
         components: {
-            HelloWorld
+            Encrypt
         }
     }
 </script>
 
 <style>
+* {
+    background-color: #f1f1f1;
+}
 #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -24,5 +26,6 @@
     text-align: center;
     color: #2c3e50;
     margin-top: 60px;
+
 }
 </style>
