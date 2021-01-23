@@ -32,7 +32,7 @@
                 <b-col>
                     <b-button variant="success" @click="selectAlgorithm">Encrypt</b-button>
                 </b-col>
-                <!--
+                <!-- todo
                 <b-col>
                     <b-button variant="info" @click="aesEncrypt">Decrypt</b-button>
                 </b-col>
