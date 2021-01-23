@@ -1,4 +1,4 @@
-![example workflow name](https://github.com/billk97/personal-page/workflows/deployment/badge.svg)
+![deployment](https://github.com/billk97/personal-page/workflows/deployment/badge.svg)
 # personal-page
 
 ## Project setup
