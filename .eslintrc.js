@@ -8,7 +8,7 @@ module.exports = {
         'parser': 'babel-eslint'
     },
     extends: [
-        'plugin:vue/vue3-recommended'
+        'plugin:vue/recommended'
     ],
     rules: {
         "vue/html-indent": ["error", 4, {
