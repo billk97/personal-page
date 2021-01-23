@@ -1,4 +1,4 @@
-![master build passed](https://github.com/billk97/personal-page/workflows/CI/badge.svg)
+![master build passed](https://github.com/billk97/personal-page/workflows/BUILD/badge.svg)
 # personal-page
 
 ## Project setup
