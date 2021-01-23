@@ -1,4 +1,4 @@
-https://github.com/billk97/<REPOSITORY>/personal-page/<deployment>/badge.svg
+![master build passed](https://github.com/billk97/<REPOSITORY>/personal-page/<deployment>/badge.svg)
 # personal-page
 
 ## Project setup
