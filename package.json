@@ -10,6 +10,7 @@
     "build:stage": "vue-cli-service build --mode staging",
     "build": "vue-cli-service build --mode production",
     "build:prod": "vue-cli-service build --mode production",
+    "build-report": "vue-cli-service build --report",
     "lint": "eslint --ext .js,.vue src",
     "lint:style": "stylelint **/*.{vue,css} --ignore-path .gitignore",
     "lint:all": "yarn lint && yarn lint:style",
