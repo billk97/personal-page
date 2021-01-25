@@ -1,12 +1,22 @@
 import Vue from 'vue'
 import App from './App.vue'
-import { BootstrapVue } from 'bootstrap-vue'
+import {
+    FormTextareaPlugin,
+    ButtonPlugin,
+    AlertPlugin,
+    FormSelectPlugin,
+    LayoutPlugin
+} from 'bootstrap-vue'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 
-Vue.use(BootstrapVue)
+Vue.use(FormTextareaPlugin)
+Vue.use(ButtonPlugin)
+Vue.use(AlertPlugin)
+Vue.use(FormSelectPlugin)
+Vue.use(LayoutPlugin)
 Vue.config.productionTip = false
 
 

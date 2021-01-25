@@ -3,16 +3,16 @@
         <h1>Encrypt/Decrypt message</h1>
         <b-container fluid="lg">
             <b-row class="mt-5">
-                <b-col class="">
+                <b-col class="" sm="12" md="6">
                     <b-form-textarea
                         id="plain-text"
-                        v-model="plainText"
+                        v-model="message"
                         placeholder="Enter the message to encrypt"
                         no-resize
-                        :state="plainText.length > 0"
+                        :state="message.length > 0"
                     />
                 </b-col>
-                <b-col class="">
+                <b-col class="" sm="12" md="6">
                     <b-form-textarea
                         id="encryption-key"
                         v-model="encryptionKey"
@@ -30,19 +30,17 @@
             </b-row>
             <b-row class="mt-3">
                 <b-col>
-                    <b-button variant="success" @click="selectAlgorithm">Encrypt</b-button>
+                    <b-button variant="success" @click="selectAlgorithm(true)">Encrypt</b-button>
                 </b-col>
-                <!-- todo
                 <b-col>
-                    <b-button variant="info" @click="aesEncrypt">Decrypt</b-button>
+                    <b-button variant="info" @click="selectAlgorithm(false)">Decrypt</b-button>
                 </b-col>
-                -->
             </b-row>
             <b-row class="mt-3">
                 <h2 class="w-100">Base64 encoded cypher text</h2>
             </b-row>
             <b-row class="mx-3">
-                <div class="text-center w-100 cypher-text" :class="{hide: cypherText}">{{ cypherText }}</div>
+                <div class="text-center w-100 cypher-text" :class="{hide: finalText}">{{ finalText }}</div>
             </b-row>
         </b-container>
     </div>
@@ -50,33 +48,42 @@
 
 <script>
     import encryption from '@/utils/encryption'
+    import decryption from '@/utils/decryption'
 
     export default {
         name: "Encrypt",
         data() {
             return {
-                plainText: '',
+                message: '',
                 encryptionKey: '',
                 encryptionAlgorithm: '',
-                cypherText: '',
+                finalText: '',
                 supportedAlgorithms: [ { value: '', text: 'Select an encryption algorithm' }, 'AES', 'RC4']
             }
         },
         methods: {
-            selectAlgorithm() {
+            selectAlgorithm(shouldEncrypt) {
                 if( this.encryptionAlgorithm === 'AES') {
-                    this.aesEncrypt()
+                    this.aes(shouldEncrypt)
                 }
                 if( this.encryptionAlgorithm === 'RC4') {
-                    this.rc4Encrypt()
+                    this.rc4(shouldEncrypt)
                 }
             },
-            aesEncrypt() {
-                this.cypherText = encryption.aesEncrypt(this.plainText, this.encryptionKey)
+            aes(shouldEncrypt) {
+                if (shouldEncrypt) {
+                    this.finalText = encryption.aesEncrypt(this.message, this.encryptionKey)
+                    return
+                }
+                this.finalText = decryption.aesDecrypt(this.message, this.encryptionKey)
 
             },
-            rc4Encrypt() {
-                this.cypherText = encryption.rc4Encrypt(this.plainText, this.encryptionKey)
+            rc4(shouldEncrypt) {
+                if (shouldEncrypt) {
+                    this.finalText = encryption.rc4Encrypt(this.message, this.encryptionKey)
+                    return
+                }
+                this.finalText = decryption.rc4Decrypt(this.message, this.encryptionKey)
             }
         }
     }
