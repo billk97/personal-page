@@ -8,8 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      SHA8: ${GITHUB_SHA::8}
+    
     steps:
       - uses: actions/checkout@v2
 
@@ -29,7 +28,7 @@ jobs:
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           ECR_REPOSITORY: personal
-          IMAGE_TAG: $SHA8
+          IMAGE_TAG: latests
         run: |
           # Build a docker container and push it to ECR 
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
