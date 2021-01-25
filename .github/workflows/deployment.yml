@@ -22,7 +22,9 @@ jobs:
         run: echo Hello, world!
 
       - name: Display build message
-        run: echo Build complete
+        run: | 
+          docker build -t vue/web-page .
+          docker run -it -p 8080:80 --rm --name web-page vue/web-page
 #   test:
 #     needs: [build]
 #     runs-on: ubuntu-latest
