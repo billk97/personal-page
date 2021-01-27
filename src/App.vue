@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <nav-bar />
-        <about/>
+        <about />
         <encrypt v-if="false" />
     </div>
 </template>
