@@ -1,31 +1,35 @@
 <template>
     <div id="app">
-        <encrypt />
+        <nav-bar />
+        <about/>
+        <encrypt v-if="false" />
     </div>
 </template>
 
 <script>
     import Encrypt from './components/Encrypt.vue'
+    import NavBar from '@/components/NavBar'
+    import About from '@/components/About'
 
     export default {
         name: 'App',
         components: {
-            Encrypt
+            NavBar,
+            Encrypt,
+            About
         }
     }
 </script>
 
 <style>
-* {
-    background-color: #f1f1f1;
-}
+
 #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
-    margin-top: 60px;
-
+    background-color: #f1f1f1;
+    height: 100vh;
 }
 </style>
