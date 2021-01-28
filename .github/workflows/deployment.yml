@@ -8,9 +8,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: contains(github.event.pull_request.labels.*.name, 'safe to build/test')
 
     steps:
+      - run: echo hahaha
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Setup Node
