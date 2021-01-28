@@ -21,6 +21,8 @@ jobs:
       - uses: borales/actions-yarn@v2.0.0
         with:
           cmd: build
+      - name: Test
+      - run: echo bill
       
 #   test:
 #     needs: [build]
