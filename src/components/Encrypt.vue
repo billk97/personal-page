@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="mt-3">
         <h1>Encrypt/Decrypt message</h1>
         <b-container fluid="lg">
             <b-row class="mt-5">

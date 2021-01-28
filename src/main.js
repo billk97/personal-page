@@ -5,7 +5,9 @@ import {
     ButtonPlugin,
     AlertPlugin,
     FormSelectPlugin,
-    LayoutPlugin
+    LayoutPlugin,
+    NavbarPlugin,
+    CardPlugin
 } from 'bootstrap-vue'
 
 import 'bootstrap/dist/css/bootstrap.css'
@@ -17,6 +19,8 @@ Vue.use(ButtonPlugin)
 Vue.use(AlertPlugin)
 Vue.use(FormSelectPlugin)
 Vue.use(LayoutPlugin)
+Vue.use(NavbarPlugin)
+Vue.use(CardPlugin)
 Vue.config.productionTip = false
 
 
