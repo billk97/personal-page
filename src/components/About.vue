@@ -1,121 +1,97 @@
 <template>
-    <b-container fluid="lg">
-        <h1>Software engineer</h1>
-        <p>I like writing code which is clean and secure enough. </p>
+    <b-container fluid="lg" class="mt-3">
+        <h1>Software engineer 🧑‍💻 </h1>
+        <p> {{ $t('catchPhrase') }}</p>
+        <img src="@/assets/monitoring.png" alt="monitoring images">
         <p>
-            I currently work as a Backend Software engineer
-            <a href="https://mpass.gr/" target="blank">@mpass</a>
-            developing new features while at the same time refactoring the code base and adding
-            more and more automated tests..
-            I am also studying for a master's in Information Systems
+            {{ $t('sortDirection[0]') }}
+            <a href="https://mpass.gr/" target="blank">@MPASS</a>
+            {{ $t('sortDirection[1]') }}
             <a href="https://aueb.gr/en" target="blank">@AUEB</a>
-            My interests develop mostly around the domains of information security, clean coding,
-            code architecture, DevOps, secure application development, and lots of other relevant domains.
-            I'm eager to learn new technologies and further develop my knowledge.
+            {{ $t('sortDirection[2]') }}
         </p>
-        <h3>Education</h3>
+        <h3>Work experience  💼</h3>
         <ul>
-            <li class="bullets">
+            <li class="bullets-work">
+                <strong>Software engineer <a href="https://mpass.gr/" target="blank">@MPASS</a>
+                    📆  05/2020 - Present
+                </strong>
+                <p>{{ $t('mpassWorkDescription') }}</p>
+            </li>
+            <li class="bullets-work">
+                <strong>Assistant System Administrator <a href="https://cslab.aueb.gr/en/about/" target="blank">@AUEB CsLabs</a>
+                    📆  02/2019 - 06/2020
+                </strong>
+                <p>{{ $t('auebWorkDescription') }}</p>
+            </li>
+        </ul>
+        <h3>Education  🎓 </h3>
+        <ul>
+            <li class="bullets-education">
+                Mcs Information Systems 🐌
+                <a href="https://aueb.gr/en" target="blank">@AUEB</a>
+                📆 09/2020 - Present
+            </li>
+            <li class="bullets-education">
                 Bs Computer Science ✅
                 <a href="https://aueb.gr/en" target="blank">@AUEB</a>
-            </li>
-            <li class="bullets">
-                Mcs Information Systems 🐌(in progress)
-                <a href="https://aueb.gr/en" target="blank">@AUEB</a>
+                📆 09/2015 - 06/2020
             </li>
         </ul>
         <h3>Technologies I use </h3>
         <b-card-group columns>
-            <b-card title="Development">
-                <span style="font-size: larger">Languages</span>
-                <b-list-group style="text-align: left">
-                    <b-list-group-item>
-                        <img src="@/assets/java.png" alt="java image">
-                        <strong>Java</strong>
-                        1 Year of professional experience
-                    </b-list-group-item>
-                    <b-list-group-item>
-                        <img src="@/assets/javascript.png" alt="javascript image">
-                        <strong>Javascript</strong>
-                        6 Months of professional experience
-                    </b-list-group-item>
-                    <b-list-group-item>
-                        <img src="@/assets/python.png" alt="python image">
-                        <strong>Python</strong>
-                    </b-list-group-item>
-                </b-list-group>
-                <span style="font-size: larger">Frameworks</span>
-                <b-list-group style="text-align: left">
-                    <b-list-group-item>
-                        <img src="@/assets/spring.png" alt="spring image">
-                        <strong>Spring boot</strong>
-                        1 Year of professional experience
-                    </b-list-group-item>
-                    <b-list-group-item>
-                        <img src="@/assets/vue.svg" alt="vue image">
-                        <strong>Vue js</strong>
-                        6 Months of professional experience
-                    </b-list-group-item>
-                    <b-list-group-item>
-                        <img src="@/assets/android.png" alt="android image">
-                        <strong>Android</strong>
-                    </b-list-group-item>
-                    <b-list-group-item>
-                        <img src="@/assets/bootstrap.png" alt="boostrap image">
-                        <strong>Bootstrap</strong>
-                    </b-list-group-item>
-                </b-list-group>
-            </b-card>
+            <technologies :technologies="[java]" />
             <b-card title="Inferstructure">
                 <b-card-text>
                     <b-list-group style="text-align: left">
                         <b-list-group-item>
                             <img src="@/assets/docker.png" alt="docker image">
-                            <strong>Docker</strong>
+                            <strong> Docker</strong>
                             1 Year of professional experience
                         </b-list-group-item>
                         <b-list-group-item>
                             <img src="@/assets/aws.png" alt="aws image">
-                            <strong>AWS</strong>
+                            <strong> AWS</strong>
                             6 Months of professional experience
                         </b-list-group-item>
                         <b-list-group-item>
                             <img src="@/assets/git.png" alt="git image">
-                            <strong>git</strong>
+                            <strong> Git</strong>
                         </b-list-group-item>
                         <b-list-group-item>
                             <img src="@/assets/mysql.png" alt="mysql image">
-                            <strong>mysql</strong>
+                            <strong> Mysql</strong>
                         </b-list-group-item>
                         <b-list-group-item>
-                            <img src="@/assets/jenkins.png" alt="jenkins image">
-                            <strong>jenkins</strong>
+                            <img src="@/assets/jenkins-icon.png" alt="jenkins image">
+                            <strong> Jenkins</strong>
                         </b-list-group-item>
                     </b-list-group>
                 </b-card-text>
-                <b-card-text class="small text-muted">Last updated 3 mins ago</b-card-text>
             </b-card>
-            <b-card title="Title">
+            <b-card title="Frameworks">
                 <b-card-text>
-                    This card has supporting text below as a natural lead-in to additional content.
                     <b-list-group style="text-align: left">
                         <b-list-group-item>
-                            <img src="@/assets/java.png" alt="java image">
-                            <strong>Java</strong>
+                            <img src="@/assets/spring.png" alt="spring image">
+                            <strong> Spring boot</strong>
                             1 Year of professional experience
                         </b-list-group-item>
                         <b-list-group-item>
-                            <img src="@/assets/javascript.png" alt="javascript image">
-                            <strong>Javascript</strong>
+                            <img src="@/assets/vue.svg" alt="vue image">
+                            <strong> Vue js</strong>
                             6 Months of professional experience
                         </b-list-group-item>
                         <b-list-group-item>
-                            <img src="@/assets/python.png" alt="python image">
-                            <strong>Python</strong>
+                            <img src="@/assets/android.png" alt="android image">
+                            <strong> Android</strong>
+                        </b-list-group-item>
+                        <b-list-group-item>
+                            <img src="@/assets/bootstrap.png" alt="boostrap image">
+                            <strong> Bootstrap</strong>
                         </b-list-group-item>
                     </b-list-group>
                 </b-card-text>
-                <b-card-text class="small text-muted">Last updated 3 mins ago</b-card-text>
             </b-card>
 
         </b-card-group>
@@ -123,15 +99,25 @@
 </template>
 
 <script>
+    import Technologies from '@/components/Technologies'
     export default {
-        name: "About"
+        name: "About",
+        components: {Technologies},
+        data() {
+            return {
+                java: {title: "Java", description: "1 Year of professional experience."}
+            }
+        }
     }
 </script>
 
 <style scoped>
-    .bullets {
+    .bullets-education {
         text-align: left;
         font-weight: bold;
+    }
+    .bullets-work {
+        text-align: left;
     }
 
 </style>
