@@ -40,60 +40,9 @@
         </ul>
         <h3>Technologies I use </h3>
         <b-card-group columns>
-            <technologies :technologies="[java]" />
-            <b-card title="Inferstructure">
-                <b-card-text>
-                    <b-list-group style="text-align: left">
-                        <b-list-group-item>
-                            <img src="@/assets/docker.png" alt="docker image">
-                            <strong> Docker</strong>
-                            1 Year of professional experience
-                        </b-list-group-item>
-                        <b-list-group-item>
-                            <img src="@/assets/aws.png" alt="aws image">
-                            <strong> AWS</strong>
-                            6 Months of professional experience
-                        </b-list-group-item>
-                        <b-list-group-item>
-                            <img src="@/assets/git.png" alt="git image">
-                            <strong> Git</strong>
-                        </b-list-group-item>
-                        <b-list-group-item>
-                            <img src="@/assets/mysql.png" alt="mysql image">
-                            <strong> Mysql</strong>
-                        </b-list-group-item>
-                        <b-list-group-item>
-                            <img src="@/assets/jenkins-icon.png" alt="jenkins image">
-                            <strong> Jenkins</strong>
-                        </b-list-group-item>
-                    </b-list-group>
-                </b-card-text>
-            </b-card>
-            <b-card title="Frameworks">
-                <b-card-text>
-                    <b-list-group style="text-align: left">
-                        <b-list-group-item>
-                            <img src="@/assets/spring.png" alt="spring image">
-                            <strong> Spring boot</strong>
-                            1 Year of professional experience
-                        </b-list-group-item>
-                        <b-list-group-item>
-                            <img src="@/assets/vue.svg" alt="vue image">
-                            <strong> Vue js</strong>
-                            6 Months of professional experience
-                        </b-list-group-item>
-                        <b-list-group-item>
-                            <img src="@/assets/android.png" alt="android image">
-                            <strong> Android</strong>
-                        </b-list-group-item>
-                        <b-list-group-item>
-                            <img src="@/assets/bootstrap.png" alt="boostrap image">
-                            <strong> Bootstrap</strong>
-                        </b-list-group-item>
-                    </b-list-group>
-                </b-card-text>
-            </b-card>
-
+            <technologies :technologies="langBox" />
+            <technologies :technologies="frameBox" />
+            <technologies :technologies="infrastructureBox" />
         </b-card-group>
     </b-container>
 </template>
@@ -105,7 +54,31 @@
         components: {Technologies},
         data() {
             return {
-                java: {title: "Java", description: "1 Year of professional experience."}
+                langBox: {
+                    title: "Languages",
+                    boxes: [
+                        {title: "Java", description: "1 Year of professional experience.", imagePath: "java.png"},
+                        {title: "Javascript", description: "6 Months of professional experience", imagePath: "javascript.png"},
+                        {title: "Python", description: "Go to language for scripts, data science, machine learning", imagePath: "python.png"}]
+                },
+                infrastructureBox: {
+                    title: "Infrastructure",
+                    boxes: [
+                        {title: "Docker", description: "1 Year of professional experience.", imagePath: "docker.png"},
+                        {title: "AWS", description: "6 Months of professional experience", imagePath: "aws.png"},
+                        {title: "Git", description: "", imagePath: "git.png"},
+                        {title: "Mysql", description: "1 Year of professional experience.", imagePath: "mysql.png"},
+                        {title: "Jenkins", description: "6 Months of professional experience", imagePath: "jenkins-icon.png"},]
+                },
+                frameBox: {
+                    title: "Frameworks",
+                    boxes: [
+                        {title: "Spring boot", description: "1 Year of professional experience.", imagePath: "spring.png"},
+                        {title: "Vue js", description: "6 Months of professional experience", imagePath: "vue.svg"},
+                        {title: "Android", description: "", imagePath: "android.png"},
+                        {title: "Bootstrap", description: "", imagePath: "bootstrap.png"}
+                    ]
+                }
             }
         }
     }

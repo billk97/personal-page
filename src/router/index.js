@@ -7,8 +7,8 @@ const router = new VueRouter({
     base: '/',
     routes: [
         {
-            path: '/about',
-            name: 'about',
+            path: '/',
+            name: 'base',
             component: () => import('@/components/About'),
             meta: {
                 title: 'Vasileis Konstantinou'
