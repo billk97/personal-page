@@ -1,23 +1,29 @@
 <template>
     <div id="app">
         <nav-bar />
-        <router-view />
+        <router-view class="router" style="padding-bottom: 3rem;" />
+        <footer-bar class="footer" />
     </div>
 </template>
 
 <script>
     import NavBar from '@/components/NavBar'
-
+    import FooterBar from '@/components/FooterBar'
     export default {
         name: 'App',
         components: {
-            NavBar
+            NavBar,
+            FooterBar
         }
     }
 </script>
 
 <style>
-
+html, body{
+    height: 100%;
+    padding: 0;
+    background-color: #f1f1f1 !important;
+}
 
 #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -27,5 +33,8 @@
     color: #2c3e50;
     background-color: #f1f1f1;
     background-size: cover;
+    position: relative;
+    min-height: 100vh;
 }
+
 </style>

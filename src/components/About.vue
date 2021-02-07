@@ -3,14 +3,14 @@
         <h1>Software engineer 🧑‍💻 </h1>
         <p> {{ $t('catchPhrase') }}</p>
         <img src="@/assets/monitoring.png" alt="monitoring images">
-        <p>
+        <p class="mt-5">
             {{ $t('sortDirection[0]') }}
             <a href="https://mpass.gr/" target="blank">@MPASS</a>
             {{ $t('sortDirection[1]') }}
             <a href="https://aueb.gr/en" target="blank">@AUEB</a>
             {{ $t('sortDirection[2]') }}
         </p>
-        <h3>Work experience  💼</h3>
+        <h3 class="mt-5">Work experience  💼</h3>
         <ul>
             <li class="bullets-work">
                 <strong>Software engineer <a href="https://mpass.gr/" target="blank">@MPASS</a>
@@ -25,7 +25,7 @@
                 <p>{{ $t('auebWorkDescription') }}</p>
             </li>
         </ul>
-        <h3>Education  🎓 </h3>
+        <h3 class="mt-5">Education  🎓 </h3>
         <ul>
             <li class="bullets-education">
                 Mcs Information Systems 🐌
@@ -38,7 +38,7 @@
                 📆 09/2015 - 06/2020
             </li>
         </ul>
-        <h3>Technologies I use </h3>
+        <h3 class="mt-5">Technologies I use </h3>
         <b-card-group columns>
             <technologies :technologies="langBox" />
             <technologies :technologies="frameBox" />
