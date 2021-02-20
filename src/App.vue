@@ -2,6 +2,7 @@
     <div id="app">
         <nav-bar />
         <router-view class="router" style="padding-bottom: 3rem;" />
+        <hr>
         <footer-bar class="footer" />
     </div>
 </template>

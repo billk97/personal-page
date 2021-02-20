@@ -19,7 +19,7 @@
                 <p>{{ $t('mpassWorkDescription') }}</p>
             </li>
             <li class="bullets-work">
-                <strong>Assistant System Administrator <a href="https://cslab.aueb.gr/en/about/" target="blank">@AUEB CsLabs</a>
+                <strong>Assistant System Administrator <a href="https://cslab.aueb.gr/en/about/AboutRoute.vue" target="blank">@AUEB CsLabs</a>
                     📆  02/2019 - 06/2020
                 </strong>
                 <p>{{ $t('auebWorkDescription') }}</p>
