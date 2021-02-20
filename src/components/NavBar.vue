@@ -9,8 +9,8 @@
                 </b-nav-item>
                 <b-nav-item href="#">Projects</b-nav-item>
                 <b-nav-item-dropdown text="Utils">
-                    <b-dropdown-item href="/utils">Encrypt/Decrypt</b-dropdown-item>
-                    <b-dropdown-item href="#">Sing text</b-dropdown-item>
+                    <b-dropdown-item href="/utils/encrypt">Encrypt/Decrypt</b-dropdown-item>
+                    <b-dropdown-item href="/utils/jwt">JWT utils</b-dropdown-item>
                 </b-nav-item-dropdown>
                 <b-nav-item href="#">Blog</b-nav-item>
             </b-navbar-nav>
