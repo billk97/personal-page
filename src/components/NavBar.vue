@@ -1,6 +1,6 @@
 <template>
     <b-navbar toggleable="lg" type="dark" style="background-color: #f68d28; font-weight: bold;">
-        <b-navbar-brand href="#">Vasileios Konstantinou</b-navbar-brand>
+        <b-navbar-brand href="/">Vasileios Konstantinou</b-navbar-brand>
         <b-navbar-toggle target="nav-collapse" />
         <b-collapse id="nav-collapse" is-nav>
             <b-navbar-nav>
