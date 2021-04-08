@@ -37,7 +37,7 @@
                     />
                 </b-row>
                 <b-row>
-                    <h5>signature</h5>
+                    <h5>Signature</h5>
                     <b-form-textarea
                         id="plain-text"
                         v-model="jwtSignature"

@@ -44,6 +44,13 @@
             <technologies :technologies="frameBox" />
             <technologies :technologies="infrastructureBox" />
         </b-card-group>
+        <h4 class="mt-5">
+            Download my Resume
+            <a href="https://drive.google.com/file/d/1Vx_eAq8A22D2T2eH35dyZxn1OMN_M6T_/view" download="konstantinou-resume.pdf" target="_blank">
+                ⬇
+            </a>️
+        </h4>
+
     </b-container>
 </template>
 
@@ -57,7 +64,7 @@
                 langBox: {
                     title: "Languages",
                     boxes: [
-                        {title: "Java", description: "1 Year of professional experience.", imagePath: "java.png"},
+                        {title: "Java", description: "1 Year of professional experience. 6 year's in total", imagePath: "java.png"},
                         {title: "Javascript", description: "6 Months of professional experience", imagePath: "javascript.png"},
                         {title: "Python", description: "Go to language for scripts, data science, machine learning", imagePath: "python.png"}]
                 },
@@ -66,7 +73,7 @@
                     boxes: [
                         {title: "Docker", description: "1 Year of professional experience.", imagePath: "docker.png"},
                         {title: "AWS", description: "6 Months of professional experience", imagePath: "aws.png"},
-                        {title: "Git", description: "", imagePath: "git.png"},
+                        {title: "Git", description: "4 Year of experience.", imagePath: "git.png"},
                         {title: "Mysql", description: "1 Year of professional experience.", imagePath: "mysql.png"},
                         {title: "Jenkins", description: "6 Months of professional experience", imagePath: "jenkins-icon.png"},]
                 },
@@ -75,8 +82,9 @@
                     boxes: [
                         {title: "Spring boot", description: "1 Year of professional experience.", imagePath: "spring.png"},
                         {title: "Vue js", description: "6 Months of professional experience", imagePath: "vue.svg"},
-                        {title: "Android", description: "", imagePath: "android.png"},
-                        {title: "Bootstrap", description: "", imagePath: "bootstrap.png"}
+                        {title: "Android", description: "1 Year of experience.", imagePath: "android.png"},
+                        {title: "Bootstrap", description: "6 Months of professional experience", imagePath: "bootstrap.png"},
+                        {title: "OpenFaas", description: "personal project", imagePath: "openfaas.png"}
                     ]
                 }
             }
