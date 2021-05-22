@@ -11,6 +11,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: eu-central-2
       - name: Setup Node
         uses: actions/setup-node@master
       - name: Setup yarn installing dependencies
@@ -20,6 +26,9 @@ jobs:
       - uses: borales/actions-yarn@v2.0.0
         with:
           cmd: build
+      - name: Deploy to s3 
+        run: aws s3 syc ./dist/ s3://konstantinou --delete
+      
       
 #   test:
 #     needs: [build]
