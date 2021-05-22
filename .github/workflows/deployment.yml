@@ -2,13 +2,11 @@ name: BUILD
 on:
   pull_request:
     branches: [ master ]
-  push:
-    branches: [ master ]
-  #workflow_dispatch:
+  workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
-    # if: contains(github.event.pull_request.labels.*.name, 'safe to build/test')
+    if: contains(github.event.pull_request.labels.*.name, 'safe to build/test')
 
     steps:
       - name: Checkout code
