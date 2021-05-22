@@ -39,6 +39,14 @@ const router = new VueRouter({
             }
         },
         {
+            path: '/utils/hash',
+            name: 'hash',
+            component: () => import('@/components/routes/HashRoute'),
+            meta: {
+                title: 'Hash Utilities'
+            }
+        },
+        {
             path: '/blogs',
             name: 'blogs',
             component: () => import('@/components/routes/AboutRoute'),

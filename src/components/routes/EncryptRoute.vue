@@ -47,8 +47,7 @@
 </template>
 
 <script>
-    import encryption from '@/utils/encryption'
-    import decryption from '@/utils/decryption'
+    import crypto from '@/utils/crypto'
 
     export default {
         name: "Encrypt",
@@ -72,18 +71,18 @@
             },
             aes(shouldEncrypt) {
                 if (shouldEncrypt) {
-                    this.finalText = encryption.aesEncrypt(this.message, this.encryptionKey)
+                    this.finalText = crypto.aesEncrypt(this.message, this.encryptionKey)
                     return
                 }
-                this.finalText = decryption.aesDecrypt(this.message, this.encryptionKey)
+                this.finalText = crypto.aesDecrypt(this.message, this.encryptionKey)
 
             },
             rc4(shouldEncrypt) {
                 if (shouldEncrypt) {
-                    this.finalText = encryption.rc4Encrypt(this.message, this.encryptionKey)
+                    this.finalText = crypto.rc4Encrypt(this.message, this.encryptionKey)
                     return
                 }
-                this.finalText = decryption.rc4Decrypt(this.message, this.encryptionKey)
+                this.finalText = crypto.rc4Decrypt(this.message, this.encryptionKey)
             }
         }
     }
