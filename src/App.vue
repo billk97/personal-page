@@ -3,6 +3,7 @@
         <nav-bar />
         <router-view class="router" style="padding-bottom: 3rem;" />
         <hr>
+        Test
         <footer-bar class="footer" />
     </div>
 </template>
