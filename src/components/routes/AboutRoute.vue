@@ -39,7 +39,7 @@
             </li>
         </ul>
         <h3 class="mt-5">Technologies I use </h3>
-        <b-card-group columns>
+        <b-card-group>
             <technologies :technologies="langBox" />
             <technologies :technologies="frameBox" />
             <technologies :technologies="infrastructureBox" />
