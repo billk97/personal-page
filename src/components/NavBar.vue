@@ -2,7 +2,7 @@
     <nav class="navbar">
         <div class="nav-container">
             <a href="." class="brand">
-                Vasileios<br> Konstantinou
+                Vasileios Konstantinou
             </a>
             <div class="nav-links" :class="{ 'show-menu': toggleMobileMenu}">
                 <router-link to="/" class="nav-link" exact>Home</router-link>
