@@ -137,16 +137,10 @@
     }
 
     .technologies-container {
-        margin-bottom: 15%;
+        margin-bottom: 12%;
     }
 }
 
-
-@media screen and (min-width: 1000px) {
-    .technologies-container {
-        margin-bottom: 10%;
-    }
-}
 
 @media screen and (min-width: 1600px) {
     .title {
