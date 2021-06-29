@@ -4,20 +4,27 @@ Vue.use(VueRouter)
 
 const router = new VueRouter({
     mode: 'history',
-    base: '/',
     routes: [
         {
             path: '/',
-            name: 'base',
+            name: 'Home',
+            component: () => import('@/components/routes/HomeRoute'),
+            meta: {
+                title: 'Home'
+            }
+        },
+        {
+            path: '/about',
+            name: 'about',
             component: () => import('@/components/routes/AboutRoute'),
             meta: {
-                title: 'Vasileis Konstantinou'
+                title: 'About'
             }
         },
         {
             path: '/projects',
             name: 'projects',
-            component: () => import('@/components/routes/AboutRoute'),
+            component: () => import('@/components/routes/ProjectsRoute'),
             meta: {
                 title: 'Projects'
             }
@@ -47,8 +54,8 @@ const router = new VueRouter({
             }
         },
         {
-            path: '/blogs',
-            name: 'blogs',
+            path: '/blog',
+            name: 'blog',
             component: () => import('@/components/routes/AboutRoute'),
             meta: {
                 title: 'Blogs'
