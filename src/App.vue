@@ -1,9 +1,8 @@
 <template>
     <div id="app">
         <nav-bar />
-        <router-view class="router" style="padding-bottom: 3rem;" />
-        <hr>
-        <footer-bar class="footer" />
+        <router-view />
+        <footer-bar />
     </div>
 </template>
 
@@ -20,22 +19,18 @@
 </script>
 
 <style>
-html, body{
-    height: 100%;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+* {
     padding: 0;
-    background-color: #f1f1f1 !important;
+    margin: 0;
+    box-sizing: border-box;
+}
+html, body {
+    font-family: 'Roboto', sans-serif;
 }
 
 #app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    background-color: #f1f1f1;
-    background-size: cover;
-    position: relative;
-    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
 }
 
 </style>

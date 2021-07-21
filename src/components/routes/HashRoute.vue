@@ -1,21 +1,23 @@
 <template>
     <div class="mt-3">
-        <h1>Hash Debugger</h1>
+        <h2 class="text-center">Hash Debugger</h2>
         <b-container fluid="lg">
             <b-row class="mt-5">
-                <b-form-textarea
-                    id="plain-text"
-                    v-model="plainText"
-                    placeholder="Enter the message to encrypt"
-                    no-resize
-                    :state="plainText.length > 0"
-                />
-                <hash-component :hash="{func: 'SHA 3: ', value: sha3()}" />
-                <hash-component :hash="{func: 'SHA 512: ', value: sha512()}" />
-                <hash-component :hash="{func: 'SHA 256: ', value: sha256()}" />
-                <hash-component :hash="{func: 'SHA 1: ', value: sha1()}" />
-                <hash-component :hash="{func: 'MD5: ', value: md5()}" />
-                <hash-component :hash="{func: 'ripemd160 : ', value: ripemd160()}" />
+                <b-col class="d-flex flex-column justify-content-center align-items-center">
+                    <b-form-textarea
+                        id="plain-text"
+                        v-model="plainText"
+                        placeholder="Enter the message to encrypt"
+                        no-resize
+                        :state="plainText.length > 0"
+                    />
+                    <hash-component :hash="{func: 'SHA 3: ', value: sha3()}" />
+                    <hash-component :hash="{func: 'SHA 512: ', value: sha512()}" />
+                    <hash-component :hash="{func: 'SHA 256: ', value: sha256()}" />
+                    <hash-component :hash="{func: 'SHA 1: ', value: sha1()}" />
+                    <hash-component :hash="{func: 'MD5: ', value: md5()}" />
+                    <hash-component :hash="{func: 'ripemd160 : ', value: ripemd160()}" />
+                </b-col>
             </b-row>
         </b-container>
     </div>

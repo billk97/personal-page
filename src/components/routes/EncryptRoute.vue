@@ -1,6 +1,6 @@
 <template>
     <div class="mt-3">
-        <h1>Encrypt/Decrypt message</h1>
+        <h2 class="text-center">Encrypt/Decrypt message</h2>
         <b-container fluid="lg">
             <b-row class="mt-5">
                 <b-col class="" sm="12" md="6">
@@ -12,35 +12,51 @@
                         :state="message.length > 0"
                     />
                 </b-col>
-                <b-col class="" sm="12" md="6">
+                <b-col sm="12" md="6" class="mt-2 mt-md-0">
                     <b-form-textarea
                         id="encryption-key"
                         v-model="encryptionKey"
                         placeholder="Enter The encryption key"
+                        no-resize
                         :state="encryptionKey.length > 0"
                     />
                 </b-col>
             </b-row>
             <b-row>
-                <b-form-select
-                    v-model="encryptionAlgorithm"
-                    :options="supportedAlgorithms"
-                    class="mx-3 mt-3"
-                />
-            </b-row>
-            <b-row class="mt-3">
-                <b-col>
-                    <b-button variant="success" @click="selectAlgorithm(true)">Encrypt</b-button>
-                </b-col>
-                <b-col>
-                    <b-button variant="info" @click="selectAlgorithm(false)">Decrypt</b-button>
+                <b-col class="d-flex justify-content-center">
+                    <b-form-select
+                        v-model="encryptionAlgorithm"
+                        :options="supportedAlgorithms"
+                        class="mt-3"
+                    />
                 </b-col>
             </b-row>
             <b-row class="mt-3">
-                <h2 class="w-100">Base64 encoded cypher text</h2>
+                <b-col sm="6" class="d-flex justify-content-center">
+                    <b-button variant="success" size="lg" @click="selectAlgorithm(true)">Encrypt</b-button>
+                </b-col>
+                <b-col sm="6" class="mt-2 mt-md-0 d-flex justify-content-center">
+                    <b-button variant="info" size="lg" @click="selectAlgorithm(false)">Decrypt</b-button>
+                </b-col>
             </b-row>
-            <b-row class="mx-3">
-                <div class="text-center w-100 cypher-text" :class="{hide: finalText}">{{ finalText }}</div>
+            <b-row class="mt-4 mt-md-5">
+                <b-col sm="12" md="4">
+                    <h4>Base64 encoded cypher text:</h4>
+                </b-col>
+                <b-col sm="12" md="8">
+                    <div class="text-center cypher-text">{{ finalText }}
+                        <b-button
+                            v-if="finalText"
+                            v-clipboard:copy="finalText"
+                            v-clipboard:success="onCopy"
+                            size="sm"
+                            class="copy-btn"
+                            type="button"
+                        >
+                            Copy
+                        </b-button>
+                    </div>
+                </b-col>
             </b-row>
         </b-container>
     </div>
@@ -83,6 +99,15 @@
                     return
                 }
                 this.finalText = crypto.rc4Decrypt(this.message, this.encryptionKey)
+            },
+            onCopy() {
+                this.$bvToast.toast(`Encoded Text Copied`, {
+                    variant: 'success',
+                    appendToast: false,
+                    noCloseButton: true,
+                    solid: true,
+                    autoHideDelay: 3000
+                })
             }
         }
     }
@@ -94,12 +119,20 @@
         text-align: center;
     }
     .cypher-text {
-        border-radius: 10px;
-        word-break: break-all;
+        font-size: 1.1rem;
+        border-radius: 0.25rem;
+        text-align: justify;
+        word-wrap: break-word;
         background-color: #d4ecda;
+        padding: 1rem 1rem 3rem;
+        position: relative;
     }
-    .hide {
-        border-radius: 10px;
+    .copy-btn {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background-color: var(--secondary-clr);
+        margin: 0.5rem;
     }
 
 </style>
