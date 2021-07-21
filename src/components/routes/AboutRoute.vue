@@ -2,13 +2,17 @@
     <div class="route">
         <div class="title">About</div>
         <div class="content">
-            <p class="my-3">
+            <p class="about-text">
                 {{ $t('sortDirection[0]') }}
                 <a href="https://mpass.gr/" target="_blank">@MPASS</a>
                 {{ $t('sortDirection[1]') }}
                 <a href="https://aueb.gr/en" target="_blank">@AUEB</a>
                 {{ $t('sortDirection[2]') }}
             </p>
+            <a href="https://drive.google.com/file/d/1Vx_eAq8A22D2T2eH35dyZxn1OMN_M6T_/view" class="resume" download="konstantinou-resume.pdf" target="_blank">
+                Download my Resume
+                ⬇
+            </a>️
             <h3 class="my-3">Work experience  💼</h3>
             <ul>
                 <li class="bullets-work">
@@ -24,12 +28,6 @@
                     <p>{{ $t('auebWorkDescription') }}</p>
                 </li>
             </ul>
-            <h4 class="mb-3">
-                <a href="https://drive.google.com/file/d/1Vx_eAq8A22D2T2eH35dyZxn1OMN_M6T_/view" class="resume" download="konstantinou-resume.pdf" target="_blank">
-                    Download my Resume
-                    ⬇
-                </a>️
-            </h4>
             <h3 class="my-3">Education  🎓 </h3>
             <ul>
                 <li class="bullets-education">
@@ -93,7 +91,7 @@
 
 <style scoped>
 .route {
-    background: #CCC5B9;
+    background: var(--main-clr);
 }
 .content {
     max-width: 1300px;
@@ -103,16 +101,39 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #403D39;
+    color: var(--secondary-clr);
 }
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
 .title {
     position: relative;
-    color: #403D39;
+    color: var(--secondary-clr);
     font-size: 1.75rem;
     font-weight: bold;
     text-align: center;
     padding-top: 1rem;
 }
+
+.about-text {
+    text-align: justify;
+    margin: 1rem 0 2rem;
+}
+
+.resume {
+    align-self: center;
+    border: 1px solid var(--highlight-clr);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: var(--highlight-clr);
+    font-weight: bold;
+}
+
 .bullets-education {
     text-align: left;
     font-weight: bold;
@@ -121,11 +142,6 @@
     text-align: left;
 }
 
-.resume {
-    text-decoration: none;
-    color: #ee7545;
-    font-weight: bold;
-}
 
 .technologies-container {
     margin-bottom: 20%;
@@ -134,6 +150,10 @@
 @media screen and (min-width: 600px) {
     .content {
         align-items: flex-start;
+    }
+
+    .about-text {
+        margin: 0 0 2rem ;
     }
 
     .technologies-container {
@@ -152,6 +172,7 @@
         font-size: 12rem;
         writing-mode: vertical-rl;
         text-orientation: upright;
+        user-select: none;
     }
 }
 

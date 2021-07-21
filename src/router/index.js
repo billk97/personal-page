@@ -30,6 +30,14 @@ const router = new VueRouter({
             }
         },
         {
+            path: '/utils',
+            name: 'utils',
+            component: () => import('@/components/routes/UtilsRoute'),
+            meta: {
+                title: 'Utils'
+            }
+        },
+        {
             path: '/utils/encrypt',
             name: 'encryption',
             component: () => import('@/components/routes/EncryptRoute'),

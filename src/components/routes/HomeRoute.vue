@@ -25,7 +25,7 @@
 
 <style scoped>
 .route {
-    background: #CCC5B9;
+    background: var(--main-clr);
 }
 .content {
     max-width: 1300px;
@@ -38,7 +38,7 @@
     align-items: center;
 }
 .text {
-    color: #403D39;
+    color: var(--secondary-clr);
     margin-top: 2rem;
     text-align: center;
 }

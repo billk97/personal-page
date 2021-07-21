@@ -15,7 +15,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import router from '@/router/index'
 import VueI18n from 'vue-i18n'
 import en from '@/locale/en'
-
+import '@/styles/global.css'
 
 Vue.use(FormTextareaPlugin)
 Vue.use(ButtonPlugin)
@@ -27,6 +27,7 @@ Vue.use(CardPlugin)
 Vue.use(ListGroupPlugin)
 Vue.use(VueI18n)
 Vue.config.productionTip = false
+
 
 
 const messages = { en }

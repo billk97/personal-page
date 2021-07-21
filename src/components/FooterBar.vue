@@ -14,31 +14,19 @@
                 <a href="https://stackoverflow.com/users/7994351/vasilis-konstantinou?tab=profile" class="social-icon" target="_blank">
                     <img src="@/assets/stack.png" alt="stackOverflow">
                 </a>
+                <a :href="`mailto:${getEmailAddress}`" class="social-icon">
+                    <img src="@/assets/email.png" alt="email">
+                </a>
+                <!-- <div class="email">
+                    <span v-if="displayAddress" class="mx-auto">{{ webAddress }} </span>
+                    <b-icon-eye-fill v-if="!displayAddress" class="mx-auto" @click="addToClipBoard()" />
+                </div> -->
             </div>
             <div class="copyright">
                 <span>Made with ❤️ by <a href="https://github.com/abregre" class="abregre" target="_blank">Abregre</a></span>
             </div>
         </div>
     </div>
-    <!-- <b-container fluid="lg">
-        <b-row>
-            <b-col>
-                <h3>Contact Info</h3>
-                <ul>
-                    <li class="ml-n4">Vasileios Konstantinou</li>
-                    <li class="ml-n5">Email:
-                        <span v-if="displayAddress" class="mx-3">{{ webAddress }} </span>
-        <b-icon-eye-fill v-if="!displayAddress" variant="success" @click="addToClipBoard()" />
-                    </li>
-                </ul>
-            </b-col>
-        </b-row>
-        <hr>
-        <b-row>
-            <b-col class="mb-3">
-            </b-col>
-        </b-row>
-    </b-container> -->
 </template>
 
 <script>
@@ -50,17 +38,13 @@
         },
         data() {
             return {
-                webAddress : 'dmFzaWxlaW9zQGtvbnN0YW50aW5vdS5kZXY=',
-                displayAddress: false
+                webAddress : 'dmFzaWxlaW9zQGtvbnN0YW50aW5vdS5kZXY='
             }
         },
         methods: {
-            addToClipBoard() {
-                this.displayAddress = true
-                this.webAddress = atob(this.webAddress)
-                setTimeout(() => {
-                    this.displayAddress = false
-                }, 10000)
+            getEmailAddress() {
+                console.log(atob(this.webAddress))
+                return atob(this.webAddress)
             }
         }
     }
@@ -72,9 +56,10 @@
         bottom:0;
         left:0;
         width: 100%;
-        background-color: #403D39;
-        color: #ccc5b9;
-        height: 70px;
+        background-color: var(--secondary-clr);
+        color: var(--main-clr);
+        height: 80px;
+        padding: 20px 0;
     }
 
     .content {
@@ -95,9 +80,19 @@
     }
 
     .abregre {
-        color: #ccc5b9;
+        color: var(--main-clr);
         text-decoration: none;
     }
+
+    .social-icon:hover img {
+        animation: spin 0.7s ease;
+    }
+
+    @keyframes spin {
+        from {transform:rotate(0deg);}
+        to {transform:rotate(360deg);}
+    }
+
 
     .social-icon + .social-icon{
         margin-left: 1rem;
