@@ -14,13 +14,9 @@
                 <a href="https://stackoverflow.com/users/7994351/vasilis-konstantinou?tab=profile" class="social-icon" target="_blank">
                     <img src="@/assets/stack.png" alt="stackOverflow">
                 </a>
-                <a :href="`mailto:${getEmailAddress}`" class="social-icon">
-                    <img src="@/assets/email.png" alt="email">
+                <a href="mailto:vasileios@konstantinou.dev" class="social-icon">
+                    <img src="@/assets/email-light.png" alt="email">
                 </a>
-                <!-- <div class="email">
-                    <span v-if="displayAddress" class="mx-auto">{{ webAddress }} </span>
-                    <b-icon-eye-fill v-if="!displayAddress" class="mx-auto" @click="addToClipBoard()" />
-                </div> -->
             </div>
             <div class="copyright">
                 <span>Made with ❤️ by <a href="https://github.com/abregre" class="abregre" target="_blank">Abregre</a></span>
@@ -28,27 +24,6 @@
         </div>
     </div>
 </template>
-
-<script>
-    // import { BIconEyeFill } from 'bootstrap-vue'
-    export default {
-        name: "FooterBar",
-        components: {
-
-        },
-        data() {
-            return {
-                webAddress : 'dmFzaWxlaW9zQGtvbnN0YW50aW5vdS5kZXY='
-            }
-        },
-        methods: {
-            getEmailAddress() {
-                console.log(atob(this.webAddress))
-                return atob(this.webAddress)
-            }
-        }
-    }
-</script>
 
 <style scoped>
     .footer {
@@ -82,6 +57,10 @@
     .abregre {
         color: var(--main-clr);
         text-decoration: none;
+    }
+
+    .social-icon {
+        cursor: pointer;
     }
 
     .social-icon:hover img {

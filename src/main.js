@@ -9,7 +9,8 @@ import {
     NavbarPlugin,
     CardPlugin,
     ListGroupPlugin,
-    BVToastPlugin
+    BVToastPlugin,
+    VBPopoverPlugin
 } from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
@@ -30,6 +31,7 @@ Vue.use(CardPlugin)
 Vue.use(ListGroupPlugin)
 Vue.use(VueI18n)
 Vue.use(VueClipboard)
+Vue.use(VBPopoverPlugin)
 Vue.config.productionTip = false
 
 
