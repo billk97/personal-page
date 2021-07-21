@@ -19,7 +19,7 @@
                 </a>
             </div>
             <div class="copyright">
-                <span>Made with ❤️ by <a href="https://github.com/abregre" class="abregre" target="_blank">Abregre</a></span>
+                <span>Made with ❤️ by <a href="https://digitalurban.space/" class="made-by" target="_blank">DigitalUrban</a></span>
             </div>
         </div>
     </div>
@@ -54,7 +54,7 @@
         margin-top: 0.25rem;
     }
 
-    .abregre {
+    .made-by {
         color: var(--main-clr);
         text-decoration: none;
     }

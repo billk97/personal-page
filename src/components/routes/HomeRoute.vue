@@ -5,7 +5,7 @@
                 <img :src="mySVG" alt="monitoring images" class="svg-img">
             </div>
             <div class="text">
-                <h1>Software engineer 🧑‍💻 </h1>
+                <h1 class="text-title">Software engineer </h1>
                 <p> {{ $t('catchPhrase') }}</p>
                 <div
                     v-b-popover="popOverOptions"
@@ -106,6 +106,8 @@
     border-radius: 0.25rem;
     padding: 0.5rem 2rem;
     cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
 .copy-popover {
@@ -122,14 +124,16 @@
     }
 
     .text {
-        max-width: 40%;
+        max-width: 45%;
         margin-top: 0;
         margin-right: 5%;
         text-align: left;
         align-items: flex-start;
         order: 1;
     }
-
+    .text-title {
+        font-size: 2rem;
+    }
 
     .get-email {
         margin-top: 1.5rem;
@@ -137,8 +141,22 @@
 
     .svg-img-container {
         order: 2;
-        max-width: 60%;
+        max-width: 55%;
     }
 
+}
+
+@media screen and (min-width: 800px) {
+    .text-title {
+        font-size: 2.2rem;
+    }
+    .text p {
+        font-size: 1.1rem;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .text-title {
+        font-size: 3.5rem;
+    }
 }
 </style>
