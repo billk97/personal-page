@@ -1,6 +1,6 @@
 <template>
     <b-container fluid="lg">
-        <h2>JWT Debugger</h2>
+        <h2 class="text-center">JWT Debugger</h2>
         <b-row>
             <b-col>
                 <h5 style="text-align: left">Encoded</h5>

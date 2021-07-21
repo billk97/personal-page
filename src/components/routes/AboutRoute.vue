@@ -92,6 +92,7 @@
 <style scoped>
 .route {
     background: var(--main-clr);
+    margin-top: 80px;
 }
 .content {
     max-width: 1300px;
@@ -112,7 +113,7 @@ ul {
 .title {
     position: relative;
     color: var(--secondary-clr);
-    font-size: 1.75rem;
+    font-size: 2rem;
     font-weight: bold;
     text-align: center;
     padding-top: 1rem;

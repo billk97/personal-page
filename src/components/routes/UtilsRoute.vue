@@ -1,5 +1,6 @@
 <template>
     <div class="route">
+        <div class="title">Utils</div>
         <div class="content">
             <encrypt />
             <div class="divider" />
@@ -22,6 +23,7 @@
 <style scoped>
 .route {
     background: var(--main-clr);
+    margin-top: 80px;
 }
 .content {
     max-width: 1300px;
@@ -32,8 +34,30 @@
     justify-content: center;
     color: var(--secondary-clr);
 }
+.title {
+    position: relative;
+    color: var(--secondary-clr);
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 1rem;
+}
 .divider {
     border-bottom: 1px solid var(--secondary-clr);
     margin: 2rem 0;
 }
+@media screen and (min-width: 1600px) {
+    .title {
+        position: absolute;
+        left: 0;
+        top: 80px;
+        text-transform: uppercase;
+        letter-spacing: 0.5rem;
+        font-size: 12rem;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        user-select: none;
+    }
+}
+
 </style>

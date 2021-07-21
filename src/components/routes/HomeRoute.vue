@@ -26,6 +26,7 @@
 <style scoped>
 .route {
     background: var(--main-clr);
+    margin-top: 80px;
 }
 .content {
     max-width: 1300px;

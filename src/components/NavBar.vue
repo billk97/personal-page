@@ -44,6 +44,11 @@
     background-color: var(--secondary-clr);
     color: var(--main-clr);
     height: 80px;
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
 
 .nav-container {
