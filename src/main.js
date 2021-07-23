@@ -8,7 +8,8 @@ import {
     LayoutPlugin,
     NavbarPlugin,
     CardPlugin,
-    ListGroupPlugin
+    ListGroupPlugin,
+    BadgePlugin
 } from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
@@ -26,6 +27,7 @@ Vue.use(NavbarPlugin)
 Vue.use(CardPlugin)
 Vue.use(ListGroupPlugin)
 Vue.use(VueI18n)
+Vue.use(BadgePlugin)
 Vue.config.productionTip = false
 
 

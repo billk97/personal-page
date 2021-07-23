@@ -1,6 +1,8 @@
 <template>
-    <b-navbar toggleable="lg" type="dark" style="background-color: #f68d28; font-weight: bold;">
-        <b-navbar-brand href="/">Vasileios Konstantinou</b-navbar-brand>
+    <b-navbar toggleable="lg" type="light" class="nav-bar">
+        <b-navbar-brand href="/">
+            <p id="fullName" ref="fullName" style="margin-left: 10px; min-width: 100px; margin-top: 11px;"></p>
+        </b-navbar-brand>
         <b-navbar-toggle target="nav-collapse" />
         <b-collapse id="nav-collapse" is-nav>
             <b-navbar-nav>
@@ -21,10 +23,35 @@
 
 <script>
     export default {
-        name: "NavBar"
+        name: "NavBar",
+        data() {
+            return {
+                i: 0,
+                text: 'Vasileios Konstantinou',
+                speed: 50
+            }
+        },
+        mounted() {
+            this.typeWriter()
+        },
+        methods: {
+            typeWriter() {
+                if (this.i < this.text.length) {
+                    this.$refs.fullName.innerText += this.text.charAt(this.i)
+                    this.i ++
+                    setTimeout(this.typeWriter, this.speed)
+                }
+            }
+        }
     }
 </script>
 
 <style scoped>
+
+.nav-bar {
+    background-color: rgba(117, 239, 166, 0.53);
+    font-weight: bold;
+    border-radius: 0 0 5px 5px;
+}
 
 </style>
