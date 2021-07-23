@@ -1,5 +1,5 @@
 <template>
-    <b-navbar toggleable="lg" type="light" class="nav-bar">
+    <b-navbar toggleable="lg" type="dark" class="nav-bar">
         <b-navbar-brand href="/">
             <p id="fullName" ref="fullName" style="margin-left: 10px; min-width: 100px; margin-top: 11px;"></p>
         </b-navbar-brand>
@@ -49,7 +49,7 @@
 <style scoped>
 
 .nav-bar {
-    background-color: rgba(117, 239, 166, 0.53);
+    background-color: #24292E;
     font-weight: bold;
     border-radius: 0 0 5px 5px;
 }
