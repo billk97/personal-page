@@ -28,6 +28,11 @@
                 </b-row>
                 <b-row>
                     <h5>Payload</h5>
+                    <div>
+                        <b-badge v-if="hasExpired === true" style="background-color: #e71919">Expired</b-badge>
+                        <b-badge v-else-if="hasExpired === false" style="background-color: green">Active</b-badge>
+                        <b-badge style="background-color: #0073ff">Expires:</b-badge> {{ tokenExpirationDate }}
+                    </div>
                     <b-form-textarea
                         id="plain-text"
                         v-model="jwtPayload"
@@ -63,7 +68,9 @@
                 jwtPayload: '',
                 jwtSignature: '',
                 invalidEncodedJwt: null,
-                errorMessage: ''
+                errorMessage: '',
+                tokenExpirationDate: '',
+                hasExpired: null,
             }
         },
         methods: {
@@ -81,6 +88,14 @@
                 this.jwtPayload = JSON.stringify(jwtDecode(this.encodedJwt), null, 2)
                 this.jwtHeader = JSON.stringify(jwtDecode(this.encodedJwt, {header: true}), null, 2)
                 this.jwtSignature = this.encodedJwt.split('.')[2]
+                if (!jwtDecode(this.encodedJwt).exp) {
+                    return
+                }
+                this.tokenExpirationDate = new Date(jwtDecode(this.encodedJwt).exp * 1000)
+                const current = new Date()
+                console.log(current)
+                console.log(this.tokenExpirationDate)
+                this.hasExpired =  current > this.tokenExpirationDate
             }
         }
     }
