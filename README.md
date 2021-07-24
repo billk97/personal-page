@@ -1,6 +1,7 @@
 ![master build passed](https://github.com/billk97/personal-page/workflows/BUILD/badge.svg)
 ![published](https://github.com/billk97/personal-page/workflows/BUILD/badge.svg)
 :computer: webpage https://www.konstantinou.dev/
+
 # personal-page
 This is the sorce code for my personal page.
 ## Project setup
