@@ -2,7 +2,7 @@
     <b-navbar toggleable="lg" type="dark" class="nav-bar">
         <img src="@/assets/logo.png" alt="my logo image" style="margin-left: 10px;">
         <b-navbar-brand href="/">
-            <p id="fullName" ref="fullName" style="margin-left: 10px; min-width: 100px; margin-top: 11px;"></p>
+            <p id="fullName" ref="fullName" style="margin-left: 10px; min-width: 100px; margin-top: 11px;" />
         </b-navbar-brand>
         <b-navbar-toggle target="nav-collapse" />
         <b-collapse id="nav-collapse" is-nav>

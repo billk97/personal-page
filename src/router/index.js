@@ -53,6 +53,14 @@ const router = new VueRouter({
             meta: {
                 title: 'Blogs'
             }
+        },
+        {
+            path: '/vc',
+            name: 'vc',
+            component: () => import('@/components/routes/Vc'),
+            meta: {
+                title: 'vc'
+            }
         }
     ]
 })

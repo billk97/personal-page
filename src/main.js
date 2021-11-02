@@ -9,7 +9,8 @@ import {
     NavbarPlugin,
     CardPlugin,
     ListGroupPlugin,
-    BadgePlugin
+    BadgePlugin,
+    FormInputPlugin
 } from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
@@ -21,6 +22,8 @@ import en from '@/locale/en'
 Vue.use(FormTextareaPlugin)
 Vue.use(ButtonPlugin)
 Vue.use(AlertPlugin)
+Vue.use(BadgePlugin)
+Vue.use(FormInputPlugin)
 Vue.use(FormSelectPlugin)
 Vue.use(LayoutPlugin)
 Vue.use(NavbarPlugin)
