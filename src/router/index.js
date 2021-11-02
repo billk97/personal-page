@@ -49,7 +49,7 @@ const router = new VueRouter({
         {
             path: '/blogs',
             name: 'blogs',
-            component: () => import('@/components/routes/AboutRoute'),
+            component: () => import('@/components/routes/BlogsRoute'),
             meta: {
                 title: 'Blogs'
             }

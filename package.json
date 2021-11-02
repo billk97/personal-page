@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@kangc/v-md-editor": "^1.7.7",
+    "axios": "^0.24.0",
     "bootstrap": "^5.0.1",
     "bootstrap-vue": "^2.21.2",
     "core-js": "^3.6.5",
