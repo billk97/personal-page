@@ -53,6 +53,14 @@ const router = new VueRouter({
             meta: {
                 title: 'Blogs'
             }
+        },
+        {
+            path: '/blogs/admin',
+            name: 'Blogs admin panel',
+            component: () => import('@/components/routes/AdminBlock'),
+            meta: {
+                title: 'Blogs admin panel'
+            }
         }
     ]
 })

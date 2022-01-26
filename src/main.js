@@ -16,6 +16,13 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import router from '@/router/index'
 import VueI18n from 'vue-i18n'
 import en from '@/locale/en'
+import VueDOMPurifyHTML from 'vue-dompurify-html'
+import VueMarkdownEditor from '@kangc/v-md-editor'
+import '@kangc/v-md-editor/lib/style/base-editor.css'
+import vuepressTheme from '@kangc/v-md-editor/lib/theme/vuepress.js'
+import '@kangc/v-md-editor/lib/theme/style/vuepress.css'
+import Prism from 'prismjs'
+import 'prismjs/components/prism-json'
 
 
 Vue.use(FormTextareaPlugin)
@@ -28,6 +35,10 @@ Vue.use(CardPlugin)
 Vue.use(ListGroupPlugin)
 Vue.use(VueI18n)
 Vue.use(BadgePlugin)
+Vue.use(VueDOMPurifyHTML)
+VueMarkdownEditor.use(vuepressTheme, {Prism})
+Vue.use(VueMarkdownEditor)
+
 Vue.config.productionTip = false
 
 
