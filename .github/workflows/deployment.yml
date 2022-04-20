@@ -8,6 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     if: contains(github.event.pull_request.labels.*.name, 'safe to build/test')
 
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -26,7 +27,7 @@ jobs:
       - name: Deploy to s3 
         run: aws s3 sync ./dist/ s3://konstantinou --delete
       
-      
+#      
 #   test:
 #     needs: [build]
 #     runs-on: ubuntu-latest
@@ -36,3 +37,4 @@ jobs:
 #   deploy:
 #     needs: [build, test, publish]
 #     runs-on: ubuntu-latest
+X6jw/TvHHk7RAxRKYcPpFrkVH0jVOzTAX7sgGSSC
