@@ -20,10 +20,10 @@ module.exports = {
         "vue/max-attributes-per-line": [2, {
             "singleline": 10,
             "multiline": {
-                "max": 1,
-                "allowFirstLine": false
+              "max": 1,
+              "allowFirstLine": false
             }
-        }],
+          }],
         'indent': ['error', 4],
         'vue/component-name-in-template-casing': ['error', 'kebab-case'],
         'vue/script-indent': [
