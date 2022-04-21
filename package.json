@@ -1,77 +1,77 @@
 {
-  "name": "personal-page",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "vue-cli-service serve",
-    "serve": "vue-cli-service serve --open",
-    "start": "vue-cli-service serve --open",
-    "build:dev": "vue-cli-service build --mode development",
-    "build:stage": "vue-cli-service build --mode staging",
-    "build": "vue-cli-service build --mode production",
-    "build:prod": "vue-cli-service build --mode production",
-    "build-report": "vue-cli-service build --report",
-    "lint": "eslint --ext .js,.vue src",
-    "lint:style": "stylelint **/*.{vue,css} --ignore-path .gitignore",
-    "lint:all": "yarn lint && yarn lint:style",
-    "lint:fix-all": "yarn lint --fix && yarn lint:style --fix",
-    "test": "jest"
-  },
-  "dependencies": {
-    "bootstrap": "^5.0.1",
-    "bootstrap-vue": "^2.21.2",
-    "core-js": "^3.6.5",
-    "crypto-js": "^4.0.0",
-    "i18n": "^0.13.2",
-    "jwt-decode": "^3.1.2",
-    "serve": "^13.0.2",
-    "vue": "^2.6.11",
-    "vue-i18n": "^8.22.4",
-    "vue-router": "^3.5.1"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.12.10",
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-eslint": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^7.27.0",
-    "eslint-plugin-vue": "^7.9.0",
-    "husky": "^6.0.0",
-    "jest": "^26.6.3",
-    "lint-staged": "^11.0.0",
-    "stylelint": "^13.8.0",
-    "stylelint-config-standard": "^22.0.0",
-    "vue-jest": "^3.0.7",
-    "vue-template-compiler": "^2.6.11"
-  },
-  "jest": {
-    "testResultsProcessor": "jest-sonar-reporter"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn lint:all"
-    }
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
+    "name": "personal-page",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "vue-cli-service serve",
+        "serve": "vue-cli-service serve --open",
+        "start": "vue-cli-service serve --open",
+        "build:dev": "vue-cli-service build --mode development",
+        "build:stage": "vue-cli-service build --mode staging",
+        "build": "vue-cli-service build",
+        "build:prod": "vue-cli-service build --mode production",
+        "build-report": "vue-cli-service build --report",
+        "lint": "eslint --ext .js,.vue src",
+        "lint:style": "stylelint **/*.{vue,css} --ignore-path .gitignore",
+        "lint:all": "yarn lint && yarn lint:style",
+        "lint:fix-all": "yarn lint --fix && yarn lint:style --fix",
+        "test": "jest"
     },
-    "extends": [
-      "plugin:vue/vue3-essential",
-      "eslint:recommended"
-    ],
-    "rules": {},
-    "parserOptions": {
-      "parser": "babel-eslint",
-      "ecmaVersion": 2017,
-      "sourceType": "module"
-    }
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead"
-  ]
+    "dependencies": {
+        "bootstrap": "^5.0.1",
+        "bootstrap-vue": "^2.21.2",
+        "core-js": "^3.6.5",
+        "crypto-js": "^4.0.0",
+        "i18n": "^0.13.2",
+        "jwt-decode": "^3.1.2",
+        "serve": "^13.0.2",
+        "vue": "^2.6.11",
+        "vue-i18n": "^8.22.4",
+        "vue-router": "^3.5.1"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.12.10",
+        "@vue/cli-plugin-babel": "~4.5.0",
+        "@vue/cli-plugin-eslint": "~4.5.0",
+        "@vue/cli-service": "~4.5.0",
+        "babel-eslint": "^10.1.0",
+        "eslint": "^7.27.0",
+        "eslint-plugin-vue": "^7.9.0",
+        "husky": "^6.0.0",
+        "jest": "^26.6.3",
+        "lint-staged": "^11.0.0",
+        "stylelint": "^13.8.0",
+        "stylelint-config-standard": "^22.0.0",
+        "vue-jest": "^3.0.7",
+        "vue-template-compiler": "^2.6.11"
+    },
+    "jest": {
+        "testResultsProcessor": "jest-sonar-reporter"
+    },
+    "husky": {
+        "hooks": {
+        "pre-commit": "yarn lint:all"
+        }
+    },
+    "eslintConfig": {
+        "root": true,
+        "env": {
+        "node": true
+        },
+        "extends": [
+        "plugin:vue/vue3-essential",
+        "eslint:recommended"
+        ],
+        "rules": {},
+        "parserOptions": {
+        "parser": "babel-eslint",
+        "ecmaVersion": 2017,
+        "sourceType": "module"
+        }
+    },
+    "browserslist": [
+        "> 1%",
+        "last 2 versions",
+        "not dead"
+    ]
 }
