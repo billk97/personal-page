@@ -50,23 +50,23 @@
     },
     "husky": {
         "hooks": {
-        "pre-commit": "yarn lint:all"
+            "pre-commit": "yarn lint:all"
         }
     },
     "eslintConfig": {
         "root": true,
         "env": {
-        "node": true
+            "node": true
         },
         "extends": [
-        "plugin:vue/vue3-essential",
-        "eslint:recommended"
+            "plugin:vue/vue3-essential",
+            "eslint:recommended"
         ],
         "rules": {},
         "parserOptions": {
-        "parser": "babel-eslint",
-        "ecmaVersion": 2017,
-        "sourceType": "module"
+            "parser": "babel-eslint",
+            "ecmaVersion": 2017,
+            "sourceType": "module"
         }
     },
     "browserslist": [
