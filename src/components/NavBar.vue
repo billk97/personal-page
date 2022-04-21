@@ -48,7 +48,6 @@
 </script>
 
 <style scoped>
-
 .nav-bar {
     background-color: #24292E;
     font-weight: bold;
