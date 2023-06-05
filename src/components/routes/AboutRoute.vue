@@ -14,19 +14,19 @@
         <ul>
             <li class="bullets-work">
                 <strong>🪖 Special Forces Combact Medic (Mandatory Military Service) <a href="http://army.gr/en" target="blank">@Greek Army 🇬🇷</a>
-                    📆  10/2022 - 06/2023
+                    📆  {{ armyStartDate }} - {{ armyEndDate }} ({{ armyPeriod }})
                 </strong>
                 <p>{{ $t('armyDescription') }}</p>
             </li>
             <li class="bullets-work">
                 <strong>Software engineer <a href="https://mpass.gr/" target="blank">@MPASS</a>
-                    📆  05/2020 - 09/2022
+                    📆  {{ mpassStartDate }} - {{ mpassEndDate }} ({{ mpassPeriod }})
                 </strong>
                 <p>{{ $t('mpassWorkDescription') }}</p>
             </li>
             <li class="bullets-work">
                 <strong>Assistant System Administrator <a href="https://cslab.aueb.gr/en/about/AboutRoute.vue" target="blank">@AUEB CsLabs</a>
-                    📆  02/2019 - 06/2020
+                    📆  {{ adminStartDate }} - {{ adminEndDate }} ({{ adminPeriod }})
                 </strong>
                 <p>{{ $t('auebWorkDescription') }}</p>
             </li>
@@ -34,14 +34,14 @@
         <h3 class="mt-5">Education  🎓 </h3>
         <ul>
             <li class="bullets-education">
-                Mcs Information Systems 🐌
+                Mcs Information Systems ✅
                 <a href="https://aueb.gr/en" target="blank">@AUEB</a>
-                📆 09/2020 - 06/2022
+                📆 {{ mscStartDate }} - {{ mscEndDate }} ({{ mscPeriod }})
             </li>
             <li class="bullets-education">
                 Bs Computer Science ✅
                 <a href="https://aueb.gr/en" target="blank">@AUEB</a>
-                📆 09/2015 - 06/2020
+                📆 {{ bsStartDate }} - {{ bsEndDate }} ({{ bsPeriod }})
             </li>
         </ul>
         <h3 class="mt-5">Technologies I use </h3>
@@ -62,9 +62,10 @@
 
 <script>
     import Technologies from '@/components/Technologies'
+    import period from '@/utils/period'
     export default {
         name: "About",
-        components: {Technologies},
+        components: {Technologies}, 
         data() {
             return {
                 langBox: {
@@ -92,8 +93,47 @@
                         {title: "Bootstrap", description: "6 Months of professional experience", imagePath: "bootstrap.png"},
                         {title: "OpenFaas", description: "personal project", imagePath: "openfaas.png"}
                     ]
+                },
+                dates: {
+                    army: {
+                        start: "9/01/2022",
+                        end: "06/01/2023"
+                    },
+                    mpass: {
+                        start: "04/01/2020",
+                        end: "09/01/2022"
+                    },
+                    admin: {
+                        start: "01/01/2019",
+                        end: "06/01/2020"
+                    },
+                    bs: {
+                        start: "09/01/2015",
+                        end: "07/01/2020"
+                    },
+                    msc: {
+                        start: "09/01/2020",
+                        end: "07/01/2022"
+                    }
                 }
             }
+        },
+        computed: {
+            armyStartDate() {return period.convertToSuperSortDate(this.dates.army.start)},
+            armyEndDate() {return period.convertToSuperSortDate(this.dates.army.end)},
+            armyPeriod() {return period.calculatePeriod(this.dates.army.start, this.dates.army.end)},
+            mpassStartDate() {return period.convertToSuperSortDate(this.dates.mpass.start)},
+            mpassEndDate() {return period.convertToSuperSortDate(this.dates.mpass.end)},
+            mpassPeriod() {return period.calculatePeriod(this.dates.mpass.start, this.dates.mpass.end)},
+            adminStartDate() {return period.convertToSuperSortDate(this.dates.admin.start)},
+            adminEndDate() {return period.convertToSuperSortDate(this.dates.admin.end)},
+            adminPeriod() {return period.calculatePeriod(this.dates.admin.start, this.dates.admin.end)},
+            bsStartDate() {return period.convertToSuperSortDate(this.dates.bs.start)},
+            bsEndDate() {return period.convertToSuperSortDate(this.dates.bs.end)},
+            bsPeriod() {return period.calculatePeriod(this.dates.bs.start, this.dates.bs.end)},
+            mscStartDate() {return period.convertToSuperSortDate(this.dates.msc.start)},
+            mscEndDate() {return period.convertToSuperSortDate(this.dates.msc.end)},
+            mscPeriod() {return period.calculatePeriod(this.dates.msc.start, this.dates.msc.end)},
         }
     }
 </script>
