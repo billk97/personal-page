@@ -16,7 +16,9 @@
                     <b-dropdown-item href="/utils/jwt">JWT utils</b-dropdown-item>
                     <b-dropdown-item href="/utils/hash">Hashing utils</b-dropdown-item>
                 </b-nav-item-dropdown>
-                <b-nav-item href="#">Blog</b-nav-item>
+                <b-nav-item-dropdown text="Blog">
+                    <b-dropdown-item href="https://vasilieiosk.notion.site/Design-Patterns-86950b055baf42b09519c181e832fbab">Design Patterns</b-dropdown-item>
+                </b-nav-item-dropdown>
             </b-navbar-nav>
         </b-collapse>
     </b-navbar>
