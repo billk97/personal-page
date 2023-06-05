@@ -13,8 +13,14 @@
         <h3 class="mt-5">Work experience  💼</h3>
         <ul>
             <li class="bullets-work">
+                <strong>🪖 Special Forces Combact Medic (Mandatory Military Service) <a href="http://army.gr/en" target="blank">@Greek Army 🇬🇷</a>
+                    📆  10/2022 - 06/2023
+                </strong>
+                <p>{{ $t('armyDescription') }}</p>
+            </li>
+            <li class="bullets-work">
                 <strong>Software engineer <a href="https://mpass.gr/" target="blank">@MPASS</a>
-                    📆  05/2020 - Present
+                    📆  05/2020 - 09/2022
                 </strong>
                 <p>{{ $t('mpassWorkDescription') }}</p>
             </li>
@@ -30,7 +36,7 @@
             <li class="bullets-education">
                 Mcs Information Systems 🐌
                 <a href="https://aueb.gr/en" target="blank">@AUEB</a>
-                📆 09/2020 - Present
+                📆 09/2020 - 06/2022
             </li>
             <li class="bullets-education">
                 Bs Computer Science ✅
@@ -46,7 +52,7 @@
         </b-card-group>
         <h4 class="mt-5">
             Download my Resume
-            <a href="https://drive.google.com/file/d/1Vx_eAq8A22D2T2eH35dyZxn1OMN_M6T_/view" download="konstantinou-resume.pdf" target="_blank">
+            <a href="https://drive.google.com/file/d/1Y4Ye7E6_UfR5L8Zx8eN7BS2V1NeJblpu/view" download="konstantinou-resume.pdf" target="_blank">
                 ⬇
             </a>️
         </h4>

@@ -10,6 +10,6 @@ export default {
         "by introducing unit and integration tests. Work closely with the DevOps engineer to improve and secure the " +
         "CI/CD pipeline as well as the entire infrastructure.",
     auebWorkDescription: "Worked on maintain(fixing, patching, installing, configuring) the CS-LAB infrastructure.\n" +
-        "                    Keeping the lab operational and ready to house computer science courses."
-
+        "                    Keeping the lab operational and ready to house computer science courses.",
+    armyDescription: "Served my mandatory Military service at the Greek army as a Special Forces Combat Medic soldier in the 575 Marime Battalion"
 }
