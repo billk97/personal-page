@@ -22,6 +22,7 @@
             </b-navbar-nav>
         </b-collapse>
     </b-navbar>
+    
 </template>
 
 <script>
