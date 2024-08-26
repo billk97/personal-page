@@ -1,12 +1,12 @@
 <template>
     <div class="mt-3">
-        <h1>Folder</h1>
-        <b-container fluid="lg">
-            <ul style="list-style-type: none;">
-                <li v-for="(item, index) in folders" :key="index">
-                    <img :src="getFullUrl(item.s3FilePath)" style="max-width: 300px;">
-                </li>
-            </ul>
+        <h1>My Shared files</h1>
+        <b-container fluid="lg" class="folder-frame">
+            <div v-for="(item, index) in folders" :key="index">
+                <button class="simple-folder" @click="gotToFolder(item)">
+                    {{ item }}
+                </button>
+            </div>
         </b-container>
     </div>
 </template>
@@ -15,39 +15,28 @@
     import fileApi from '@/api/file-api'
 
     export default {
-        name: "Folder",
+        name: "File",
         data() {
             return {
                 folders: []
             }
         },
-        created() {this.getFiles()},
+        created() {this.getFolders()},
         methods: {
-            getFiles() {
-                fileApi.getFilesInFolder("vacations").then( d => {
+            getFolders() {
+                fileApi.getFolders().then( d => {
                     this.folders = d
                 })
             },
-            getFullUrl(fileName) {
-                return "http://localhost:5000/api/file?file-name=" + fileName
+            gotToFolder(folderName) {
+                console.log(folderName)
+                this.$router.push(`/utils/files/folder/${folderName}`)
             }
         }
     }
 </script>
 
 <style scoped>
-    .border-help {
-        border: 1px solid red;
-        text-align: center;
-    }
-    .cypher-text {
-        border-radius: 10px;
-        word-break: break-all;
-        background-color: #d4ecda;
-    }
-    .hide {
-        border-radius: 10px;
-    }
     .simple-folder {
         width: 150px;
         height: 100px;
@@ -69,7 +58,11 @@
         top: -10px;
         left: 10px;
         border-radius: 5px 5px 0 0;
-    
+    }
+    .folder-frame {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
     }
 
 </style>

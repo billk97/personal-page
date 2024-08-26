@@ -1,14 +1,10 @@
 <template>
     <div class="mt-3">
-        <h1>Shared files</h1>
-        <b-container fluid="lg">
-            <ul style="list-style-type: none;">
-                <li v-for="(item, index) in folders" :key="index">
-                    <button class="simple-folder" @click="gotToFolder(item)">
-                        {{ item }}
-                    </button>
-                </li>
-            </ul>
+        <h1>Folder: {{ this.$route.params.name }}</h1>
+        <b-container fluid="lg" class="image-frame">
+            <div v-for="(item, index) in folders" :key="index">
+                <img :src="getFullUrl(item.s3FilePath)" style="max-width: 300px;">
+            </div>
         </b-container>
     </div>
 </template>
@@ -17,22 +13,23 @@
     import fileApi from '@/api/file-api'
 
     export default {
-        name: "File",
+        name: "Files",
         data() {
             return {
                 folders: []
             }
         },
-        created() {this.getFolders()},
+        created() {this.getFiles()},
         methods: {
-            getFolders() {
-                fileApi.getFolders().then( d => {
-                    this.folders = d
+            getFiles() {
+                fileApi.getFilesInFolder(this.$route.params.name).then( d => {
+                    console.log(d)
+                    this.folders = d.content
                 })
             },
-            gotToFolder(folderName) {
-                console.log(folderName)
-                this.$router.push(`/utils/files/folder/${folderName}`)
+            getFullUrl(fileName) {
+                console.log(`${fileApi.getBaseUrl()}file?file-name=${fileName}`)
+                return `${fileApi.getBaseUrl()}file?file-name=${fileName}`
             }
         }
     }
@@ -73,6 +70,11 @@
         left: 10px;
         border-radius: 5px 5px 0 0;
     
+    }
+    .image-frame {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
     }
 
 </style>

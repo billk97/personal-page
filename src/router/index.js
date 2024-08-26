@@ -31,19 +31,19 @@ const router = new VueRouter({
             }
         },
         {
-            path: '/utils/files',
-            name: 'files',
-            component: () => import('@/components/routes/FileRoute'),
+            path: '/utils/folders',
+            name: 'Shared folders',
+            component: () => import('@/components/routes/UsersFolderRoute'),
             meta: {
-                title: 'Shared files'
+                title: 'Shared folders'
             }
         },
         {
             path: '/utils/files/folder/:name',
-            name: 'Folder',
-            component: () => import('@/components/routes/FolderRoute'),
+            name: 'Files in folder',
+            component: () => import('@/components/routes/FilesRoute'),
             meta: {
-                title: 'Folder files'
+                title: 'Files in folder'
             }
         },
         {
