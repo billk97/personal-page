@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const baseUrl = 'http://localhost:5000/api/'
+const baseUrl = 'https://api.vsk.gr/api/'
 
 export default {
 
@@ -8,8 +8,8 @@ export default {
         return baseUrl
     },
     getFolders() {
-        return axios.get(baseUrl + 'file/folders', { headers: {
-            'application-user': 'billk97'}
+        return axios.get(baseUrl + 'file/folder', { headers: {
+            'application-user': 'admin'}
         })
             .then(r => {
                 return r.data
@@ -17,7 +17,7 @@ export default {
     },
     getFilesInFolder(fileName) {
         return axios.get(baseUrl + `file/folder/${fileName}?page=0&size=15`, { headers: {
-            'application-user': 'billk97'}
+            'application-user': 'admin'}
         })
             .then(r => {
                 return r.data
