@@ -31,6 +31,22 @@ const router = new VueRouter({
             }
         },
         {
+            path: '/utils/folders',
+            name: 'Shared folders',
+            component: () => import('@/components/routes/UsersFolderRoute'),
+            meta: {
+                title: 'Shared folders'
+            }
+        },
+        {
+            path: '/utils/files/folder/:name',
+            name: 'Files in folder',
+            component: () => import('@/components/routes/FilesRoute'),
+            meta: {
+                title: 'Files in folder'
+            }
+        },
+        {
             path: '/utils/jwt',
             name: 'jwt',
             component: () => import('@/components/routes/JwtRoute'),
