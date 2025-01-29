@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const baseUrl = 'https://api.vsk.gr/api/'
+const baseUrl = 'https://api.konstantinou.dev/api/'
 
 export default {
 
