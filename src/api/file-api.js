@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const baseUrl = 'http://localhost:5500/api/'
+const baseUrl = 'https://api.konstantinou.dev/api/'
 
 export default {
 
