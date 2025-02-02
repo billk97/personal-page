@@ -62,7 +62,7 @@
                 for (let i = 0; i < this.images.length; i++) {
                     const formData = new FormData()
                     formData.append("file", this.images[i])
-                    formData.append("folder-name", this.folderName)
+                    formData.append("folder-name", this.folder)
                     fileApi.uploadImage(formData)
                 }
                 this.imageSrc = []
