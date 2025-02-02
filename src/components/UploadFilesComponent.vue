@@ -2,6 +2,7 @@
     <div class="input-container">
         <h1 class="container">Image Upload Vue.js</h1>
         <div>
+            {{ folder }}
             <form>
                 <input
                     type="file"
@@ -31,6 +32,12 @@
     import fileApi from '@/api/file-api'
     export default {
         name: "UploadFilesComponent",
+        props: {
+            folder: {
+                type: String,
+                default: "test"
+            }
+        },
         data() {
             return {
                 imageSrc : [],
@@ -55,7 +62,7 @@
                 for (let i = 0; i < this.images.length; i++) {
                     const formData = new FormData()
                     formData.append("file", this.images[i])
-                    formData.append("folder-name", "test")
+                    formData.append("folder-name", this.folderName)
                     fileApi.uploadImage(formData)
                 }
                 this.imageSrc = []

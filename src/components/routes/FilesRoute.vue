@@ -4,7 +4,7 @@
             <h1>Folder: {{ this.$route.params.name }}</h1>
             <b-button variant="success" @click="uploadImage">Upload Image</b-button>
         </div>
-        <upload-files-component v-if="showUploadComponent">
+        <upload-files-component :folder="this.$route.params.name" v-if="showUploadComponent">
         </upload-files-component>
         <b-container fluid="lg" class="image-frame">
             <div v-for="(item, index) in folders" :key="index">
