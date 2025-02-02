@@ -1,9 +1,14 @@
 <template>
     <div class="mt-3">
-        <h1>Folder: {{ this.$route.params.name }}</h1>
+        <div style="display: flex; flex-direction: row; justify-content: space-between; margin: 10px;">
+            <h1>Folder: {{ this.$route.params.name }}</h1>
+            <b-button variant="success" @click="uploadImage">Upload Image</b-button>
+        </div>
+        <upload-files-component v-if="showUploadComponent">
+        </upload-files-component>
         <b-container fluid="lg" class="image-frame">
             <div v-for="(item, index) in folders" :key="index">
-                <img :src="getFullUrl(item.s3FilePath)" style="max-width: 300px;">
+                <img :src="getFullUrl(item.s3FileThumNailPath)" class="image-box">
             </div>
         </b-container>
     </div>
@@ -11,12 +16,15 @@
 
 <script>
     import fileApi from '@/api/file-api'
-
+    import UploadFilesComponent from '@/components/UploadFilesComponent.vue'
+    
     export default {
         name: "Files",
+        components: {UploadFilesComponent},
         data() {
             return {
-                folders: []
+                folders: [],
+                showUploadComponent: false,
             }
         },
         created() {this.getFiles()},
@@ -30,6 +38,9 @@
             getFullUrl(fileName) {
                 console.log(`${fileApi.getBaseUrl()}file?file-name=${fileName}`)
                 return `${fileApi.getBaseUrl()}file?file-name=${fileName}`
+            },
+            uploadImage() {
+                this.showUploadComponent = ! this.showUploadComponent
             }
         }
     }
@@ -75,6 +86,11 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
+    }
+    .image-box {
+        border: 2px solid black;
+        max-width: 300px;
+        margin: 5px;
     }
 
 </style>
