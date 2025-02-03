@@ -6,6 +6,10 @@
         </div>
         <upload-files-component :folder="this.$route.params.name" v-if="showUploadComponent">
         </upload-files-component>
+        <div>
+            Page: {{ page }}
+            <b-button variant="primary" @click="getNextPage()">Nexr</b-button>
+        </div>
         <b-container fluid="lg" class="image-frame">
             <div v-for="(item, index) in folders" :key="index">
                 <img :src="getFullUrl(item.s3FileThumNailPath)" class="image-box">
@@ -25,13 +29,14 @@
             return {
                 folders: [],
                 showUploadComponent: false,
+                page: 0,
+                size: 50
             }
         },
         created() {this.getFiles()},
         methods: {
             getFiles() {
-                fileApi.getFilesInFolder(this.$route.params.name).then( d => {
-                    console.log(d)
+                fileApi.getFilesInFolder(this.$route.params.name, this.page, this.size).then( d => {
                     this.folders = d.content
                 })
             },
@@ -41,6 +46,13 @@
             },
             uploadImage() {
                 this.showUploadComponent = ! this.showUploadComponent
+            },
+            getNextPage() {
+                this.folders = []
+                this.page = this.page + 1
+                fileApi.getFilesInFolder(this.$route.params.name, this.page, this.size).then( d => {
+                    this.folders = d.content
+                })
             }
         }
     }

@@ -18,8 +18,8 @@ export default {
                 return r.data
             })
     },
-    getFilesInFolder(fileName) {
-        return axios.get(baseUrl + `file/folder/${fileName}?page=0&size=15`, { headers: {
+    getFilesInFolder(fileName, page, size) {
+        return axios.get(baseUrl + `file/folder/${fileName}?page=${page}&size=${size}`, { headers: {
             'application-user': 'billk97'}
         })
             .then(r => {
